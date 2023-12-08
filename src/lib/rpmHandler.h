@@ -13,15 +13,19 @@ int64_t t1A,t1B, diffA, diffB;
 
 
 void INT_A(){
+    noInterrupts();
     diffA = millis() - t1A;
     t1A = millis();
     timA.reset();
+    interrupts();
 }
 
 void INT_B(){
+    noInterrupts();
     diffB = millis() - t1B;
     t1B = millis();
     timB.reset();
+    interrupts();
 }
 
 void initRPMCounter(){
